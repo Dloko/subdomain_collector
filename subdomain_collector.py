@@ -21,7 +21,7 @@ p2 = mp.Pool(8)
 p2.map(func2, range(0, 1))
 p2.close()
 
-enumerar3 = subprocess.run('curl https://crt.sh/?q=' + domain + ' | grep "." | grep "stone" | cut -d ">" -f2 | cut -d "<" -f1 | cut -d "*" -f1 | cut -d ":" -f1 | sort -u  >> subdomain', shell=True)
+enumerar3 = subprocess.run('curl https://crt.sh/?q=' + domain + ' | grep "." | grep "(nome do dominio a ser testado)" | cut -d ">" -f2 | cut -d "<" -f1 | cut -d "*" -f1 | cut -d ":" -f1 | sort -u  >> subdomain', shell=True)
 
 d = subprocess.run('cat subdomain |grep "' + domain + '" |cut -d "|" -f2 | cut -d "|" -f1 >> subdomain2', shell=True)
 
